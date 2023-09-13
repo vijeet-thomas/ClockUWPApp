@@ -35,6 +35,13 @@ namespace ClockApp
             secondHand.Angle = DateTime.Now.Second * 6;
             minuteHand.Angle = DateTime.Now.Minute * 6;
             hourHand.Angle = (DateTime.Now.Hour * 30);
+            TimeNow.Text = $"Current Time: {DateTime.UtcNow:T}";
+        }
+
+        private void AdVidPlayer_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            AdVidPlayer.Position = TimeSpan.FromSeconds(0);
+            AdVidPlayer.Play();
         }
     }
 }
